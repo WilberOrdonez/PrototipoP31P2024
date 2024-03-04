@@ -3,8 +3,9 @@
  */
 
 package com.mycompany.examen;
-import java.util.Random;
+        import java.util.Random;
 import java.util.Scanner;
+
 /**
  *
  * @author wilbe
@@ -42,18 +43,18 @@ public class Examen {
             }
 
             // Calcular promedios y mostrar detalles de cada liga
-            System.out.println("\nDetalles de la Liga:");
+            System.out.println("\nDetalles del Campeonato:");
+            System.out.printf("%-15s%-10s%-10s%-10s%-10s%n", "Equipo", "Año 1", "Año 2", "Año 3", "Año 4");
 
             double promedioLiga = 0;
             int puntuacionMasAlta = Integer.MIN_VALUE;
             int puntuacionMasBaja = Integer.MAX_VALUE;
 
             for (int equipo = 0; equipo < 5; equipo++) {
-                System.out.println("Equipo: " + equipos[equipo]);
-                System.out.print("Puntuaciones: ");
+                System.out.printf("%-15s", equipos[equipo]);
                 for (int año = 0; año < 4; año++) {
                     int puntuacion = puntuaciones[equipo][año];
-                    System.out.print(puntuacion + " ");
+                    System.out.printf("%-10d", puntuacion);
                     promedioLiga += puntuacion;
 
                     // Actualizar puntuación más alta y más baja
@@ -68,16 +69,16 @@ public class Examen {
             }
 
             promedioLiga /= 5 * 4;
-            System.out.println("Promedio de la Liga: " + promedioLiga);
+            System.out.println("\nPromedio del Campeonato: " + promedioLiga);
 
             // Verificar si esta liga tiene el mejor promedio
             if (promedioLiga > mejorPromedio) {
                 mejorPromedio = promedioLiga;
-                mejorLiga = "Liga";
+                mejorLiga = "Este Campeonato";
             }
 
             // Mostrar la mejor liga y su promedio
-            System.out.println("\nMejor Liga hasta ahora: " + mejorLiga + " con un promedio de " + mejorPromedio + "\n");
+            System.out.println("\nMejor Campeonato hasta ahora: " + mejorLiga + " con un promedio de " + mejorPromedio + "\n");
 
             // Preguntar si el usuario quiere iniciar un nuevo campeonato
             System.out.print("\n¿Desea iniciar un nuevo campeonato? (s/n): ");
@@ -91,3 +92,4 @@ public class Examen {
         scanner.close();
     }
 }
+
