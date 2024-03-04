@@ -1,0 +1,29 @@
+commit 64f002c1ed78f6d2b84ab0af6f21af936ea8fff0
+Author: Wilber Ordonez <wordonezr2@miumg.edu.gt>
+Date:   Mon Mar 4 11:04:20 2024 -0600
+
+    prueba final
+
+commit 2da44e73eabd79a0173f4c7179202a96b85068f2
+Author: Wilber Ordonez <wordonezr2@miumg.edu.gt>
+Date:   Mon Mar 4 11:00:32 2024 -0600
+
+    Mejora de programa
+
+commit fbe888258a1dcf31a346a9a59bcb18356c88285e
+Author: Wilber Ordonez <wordonezr2@miumg.edu.gt>
+Date:   Mon Mar 4 10:55:04 2024 -0600
+
+    segunda prueba
+
+commit 9427f8d013ee471f18e59d169f4265579bb08f4b
+Author: Wilber Ordonez <wordonezr2@miumg.edu.gt>
+Date:   Mon Mar 4 10:19:10 2024 -0600
+
+    primera prueba para ver si funciona
+
+commit 155eded8c1e34292f4c7284a942facee697d396f
+Author: Wilber Ordonez <wordonezr2@miumg.edu.gt>
+Date:   Mon Mar 4 10:12:43 2024 -0600
+
+    Creacion de proyecto
