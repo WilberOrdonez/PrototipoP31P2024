@@ -5,7 +5,6 @@
 package com.mycompany.examen;
         import java.util.Random;
 import java.util.Scanner;
-
 /**
  *
  * @author wilbe
@@ -15,14 +14,28 @@ public class Examen {
     public static void main(String[] args) {
 
 
+
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        String mejorLiga = "";
+        String mejorCampeonato = "";
         double mejorPromedio = Double.MIN_VALUE;
 
         while (true) {
-            System.out.println("CAMPEONATO DEPORTIVO");
+            System.out.println("BIENVENIDO AL SISTEMA DE CAMPEONATOS DEPORTIVOS");
+            System.out.println("Seleccione el tipo de campeonato:");
+            System.out.println("1. Atletismo");
+            System.out.println("2. Natación");
+            System.out.println("3. Baloncesto");
+            System.out.print("Ingrese el número correspondiente al tipo de campeonato (1-3): ");
+
+            int opcion = scanner.nextInt();
+            scanner.nextLine(); // Limpiar el buffer de entrada
+
+            String[] deportes = {"Atletismo", "Natación", "Baloncesto"};
+            String tipoCampeonato = deportes[opcion - 1];
+
+            System.out.println("\nCAMPEONATO DE " + tipoCampeonato);
 
             // Ingresar los nombres de los equipos
             System.out.println("Ingrese los nombres de los 5 equipos:");
@@ -42,11 +55,11 @@ public class Examen {
                 }
             }
 
-            // Calcular promedios y mostrar detalles de cada liga
+            // Calcular promedios y mostrar detalles del campeonato
             System.out.println("\nDetalles del Campeonato:");
             System.out.printf("%-15s%-10s%-10s%-10s%-10s%n", "Equipo", "Año 1", "Año 2", "Año 3", "Año 4");
 
-            double promedioLiga = 0;
+            double promedioCampeonato = 0;
             int puntuacionMasAlta = Integer.MIN_VALUE;
             int puntuacionMasBaja = Integer.MAX_VALUE;
 
@@ -55,7 +68,7 @@ public class Examen {
                 for (int año = 0; año < 4; año++) {
                     int puntuacion = puntuaciones[equipo][año];
                     System.out.printf("%-10d", puntuacion);
-                    promedioLiga += puntuacion;
+                    promedioCampeonato += puntuacion;
 
                     // Actualizar puntuación más alta y más baja
                     if (puntuacion > puntuacionMasAlta) {
@@ -68,27 +81,27 @@ public class Examen {
                 System.out.println();
             }
 
-            promedioLiga /= 5 * 4;
-            System.out.println("\nPromedio del Campeonato: " + promedioLiga);
+            promedioCampeonato /= 5 * 4;
+            System.out.println("\nPromedio del Campeonato: " + promedioCampeonato);
 
-            // Verificar si esta liga tiene el mejor promedio
-            if (promedioLiga > mejorPromedio) {
-                mejorPromedio = promedioLiga;
-                mejorLiga = "Este Campeonato";
+            // Verificar si este campeonato tiene el mejor promedio
+            if (promedioCampeonato > mejorPromedio) {
+                mejorPromedio = promedioCampeonato;
+                mejorCampeonato = tipoCampeonato;
             }
 
-            // Mostrar la mejor liga y su promedio
-            System.out.println("\nMejor Campeonato hasta ahora: " + mejorLiga + " con un promedio de " + mejorPromedio + "\n");
+            // Mostrar el mejor campeonato y su promedio
+            System.out.println("\nMejor Campeonato hasta ahora: " + mejorCampeonato + " con un promedio de " + mejorPromedio + "\n");
 
             // Preguntar si el usuario quiere iniciar un nuevo campeonato
-            System.out.print("\n¿Desea iniciar un nuevo campeonato? (s/n): ");
+            System.out.print("¿Desea iniciar un nuevo campeonato? (s/n): ");
             String respuesta = scanner.nextLine();
             if (!respuesta.equalsIgnoreCase("s")) {
                 break; // Salir del bucle si la respuesta no es "s"
             }
         }
 
-        System.out.println("¡BUEN CAMPEONATO!");
+        System.out.println("¡GRACIAS POR USAR EL SISTEMA DE CAMPEONATOS!");
         scanner.close();
     }
 }
